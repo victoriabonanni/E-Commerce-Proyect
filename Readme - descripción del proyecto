@@ -1,0 +1,59 @@
+TIENDA ECOMMERCE FUSCA HOUSE & DECO
+venta de productos de decoración y muebles para el hogar
+
+USER:
+      Nombre
+      Apellido
+      Email
+      Password
+      Type of user: 1) Común 2) Empresa 3) Admin = ID diferente para cada uno
+      ID user
+      Registro con Facebook / Google
+
+CATEGORIES:
+      Nombre: Almohadones y mantas / Muebles y Sillas / Telas / Fusca Merch
+      Productos: []
+
+PRODUCTS: []
+      Imágen: url / file
+      Título : nombre producto
+      Descripción: medidas, materiales, colores, etc
+      Precio : 1) por unidad, 2) por metro, 3) por mayor
+      ID producto                  
+
+CART:
+Comprador: USER --> ID USER Type  
+Lista: CATEGORY -> PRODUCTS [{id producto, medida/color, cantidad..}]
+
+
+
+FUNCIONALIDADES DE MI ECOMMERCE:
+Tenemos un usuario que se logea pudiendo elegir entre usuario común, empresa o admin. Si el usuario elije la opción de empresa, vamos a tener un descuento (según el producto) pero siempre respetando ciertas condiciones de compra. Como por ejemplo llegar a un monto mínimo para acceder a ese descuento. 
+ej user empresa: nombre producto: almohadón X
+                 descripción: 30x40cm, lienzo y algodón
+                 precio: $ normal y $ empresa (para q el user pueda ver cuanto se ahorra)
+Si al final de la compra no se llega al monto mínimo, se aplican los precios normales. 
+Esto aplica a todas las categorías de la página. 
+El usuario puede ver toda la lista de productos y puede añadirlos a su carrito para efectuar compras
+El usuario puede integrar PayPal como forma de página. 
+El usuario admin puede cargar, editar o eliminar productos de la página, añadir categorías y también puede ver todas las compras que se hayan efectuado, puede tener acceso a los datos del cliente. 
+
+RUTAS:
+- Ruta para crear un user 
+- Ruta para acceder según tipo de user
+- Ruta para leer un producto
+- Ruta para crear un producto
+- Ruta para modificar un producto
+- Ruta para eliminar un producto
+- Ruta para seleccionar uno o varios productos en mi carrito
+- Ruta para finalizar la compra
+- Ruta para efectuar el pago (plataforma de pagos)
+- Ruta para acceder a todas las categorías
+- Ruta para crear categoria nueva
+- Ruta para eliminar una categoria
+- Ruta para modificar una categoria
+- Ruta para ver todos los productos 
+- Ruta para contactarse con la marca
+- Ruta para acceder a todas las ventas (admin)
+- Ruta para acceder a todas tus compras 
+- Ruta para generar el tracking de un envio en tiempo real

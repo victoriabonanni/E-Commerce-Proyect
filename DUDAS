@@ -1,0 +1,43 @@
+NODE JS
+- Si por ejemplo yo ahora quisiera ademas hacer otro ecommerce, usaria esta misma carpeta/servidor o tendría que crear todo de 0 cada vez que quiero hacer un sitio web diferente?
+Todo de nuevo en una carpeta nueva, la base del back-end es siempre la misma y la puedo copiar, pero todo en carpeta nueva.
+
+- El node server.js me tira error y no me muestra el console log
+era porque tenia otra terminal abierta con el mismo numero de puerto y ya habia ejecutado la funcion
+
+- Lo que seria las pestañas de contacto, etc en una web se consideran modelos tambien?
+no, eso se hace todo a través del front, porque no contiene nada que este en la base de datos.
+
+- Por qué el require DOTENV va sin declarar variable? en que me baso para declarar o no variable?
+
+- La función require es siempre para requerir algo de la carpeta de node modules/package-lock o se puede usar para requerir de otros sitios?
+en el back solo se usa para requerir una dependencia del node modules
+
+- El catch viene siempre despues del then o puede ir en cualquier momento?
+ultimo punto, indica errores de servidor
+
+- Es lo mismo poner function() que ()=>{} ? porque se pone una funcion anonima?
+es lo mismo, callback o arrow function
+
+- Problema para subir a git hub con clave http 
+
+- Cada vez que querramos usar una funcion de una dependencia, tenemos que previamente requerirla para cada archivo?
+
+- El código de los archivos de modelos se pueden cambiar o ya quedan asi para siempre? por ejemplo las propiedades de la key TITLE dentro del schema
+
+- Siempre que nombro una funcion tengo que nombrar a su dependencia correspondiente?
+
+- por que el carrito se puede meter dentro del user?
+
+- En el back el cliente somos nosotros?
+
+- Que funcion cumple el success: true / success: false?
+
+- Porque algunos app.use van arriba y otros mas abajo?
+
+- Cuando escribo un precio es una string o un number?
+Es una string, el valor de € para indicar un precio se lo damos en el Front
+
+- Puede haber un get sin un post antes? si en teoria ese get obtiene datos que yo haya creado en mi DB con el post
+
+- Que pasa si no pongo condiciones, se crea igual?
