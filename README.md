@@ -78,4 +78,4 @@ Comandos para arrancar el servidor => npm run dev
 
 <h2>MODELOS DE DATOS DE MI APLICACIÓN</h2>
 
-<img src="./imagenes/image.png"  style="width:30px; height:30px; text-align:center"></img>
+<img src="./imagenes/modelos.png"  style="width:30px; height:30px; text-align:center"></img>
