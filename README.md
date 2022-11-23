@@ -79,3 +79,40 @@ Comandos para arrancar el servidor => npm run dev
 <h2>MODELOS DE DATOS DE MI APLICACIÓN</h2>
 
 <img src="./imagenes/modelos.png"  style="width:30px; height:30px; text-align:center"></img>
+
+
+<div>
+RUTAS:
+USER:
+- OK Ruta para crear un user - RUTA ABIERTA
+- OK Ruta para log in - RUTA ABIERTA
+- OK Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN
+- OK Ruta para que el usuario vea su perfil - RUTA PRIVADA USER
+- OK Ruta para que el user modifique su perfil - RUTA PRIVADA USER
+- OK Ruta para que el user eimine su cuenta - RUTA PRIVADA USER
+- OK Ruta para que el admin modifique un user - RUTA PRIVADA ADMIN
+- OK Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN
+- Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN
+- Ruta para acceder a todas tus compras - RUTA PRIVADA USER
+
+
+PRODUCT:
+- OK Ruta para ver todos los productos - RUTA ABIERTA
+- OK Ruta para ver un producto - RUTA ABIERTA
+- OK Ruta para crear un producto - RUTA PRIVADA ADMIN
+- OK Ruta para modificar un producto - RUTA PRIVADA ADMIN
+- OK Ruta para eliminar un producto - RUTA PRIVADA ADMIN
+- OK Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO
+- Ruta para seleccionar y agregar uno o varios productos en mi carrito - RUTA PRIVADA
+
+
+
+CATEGORY:
+- OK Ruta para ver una categoria - RUTA ABIERTA
+- OK Ruta para ver todas las categorías - RUTA ABIERTA
+- OK Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO
+- OK Ruta para crear categoria nueva - RUTA PRIVADA ADMIN
+- OK Ruta para modificar una categoria - RUTA PRIVADA ADMIN
+- OK Ruta para eliminar una categoria - RUTA PRIADA ADMIN
+
+</div>
