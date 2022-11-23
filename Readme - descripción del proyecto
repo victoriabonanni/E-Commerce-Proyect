@@ -1,4 +1,4 @@
-TIENDA ECOMMERCE FUSCA HOUSE & DECO
+TIENDA E-COMMERCE FUSCA HOUSE
 venta de productos de decoración y muebles para el hogar
 
 USER:
@@ -11,15 +11,17 @@ USER:
       Registro con Facebook / Google
 
 CATEGORIES:
-      Nombre: Almohadones y mantas / Muebles y Sillas / Telas / Fusca Merch
-      Productos: []
+      Nombre:      Almohadones /     Muebles y Sillas /              Telas /           Fusca Merch / Mantas (sin subcategory)
+      Subcategory: Handmade-Net / Mesas-Estanterias-Sillas / Por Metro-Rollo completo
 
-PRODUCTS: []
-      Imágen: url / file
+PRODUCTS:
       Título : nombre producto
       Descripción: medidas, materiales, colores, etc
       Precio : 1) por unidad, 2) por metro, 3) por mayor
-      ID producto                  
+      ID producto 
+      Category:  
+      Imágen: url / file       
+             
 
 CART:
 Comprador: USER --> ID USER Type  
@@ -39,21 +41,44 @@ El usuario puede integrar PayPal como forma de página.
 El usuario admin puede cargar, editar o eliminar productos de la página, añadir categorías y también puede ver todas las compras que se hayan efectuado, puede tener acceso a los datos del cliente. 
 
 RUTAS:
-- Ruta para crear un user 
-- Ruta para acceder según tipo de user
-- Ruta para leer un producto
-- Ruta para crear un producto
-- Ruta para modificar un producto
-- Ruta para eliminar un producto
-- Ruta para seleccionar uno o varios productos en mi carrito
-- Ruta para finalizar la compra
-- Ruta para efectuar el pago (plataforma de pagos)
-- Ruta para acceder a todas las categorías
-- Ruta para crear categoria nueva
-- Ruta para eliminar una categoria
-- Ruta para modificar una categoria
-- Ruta para ver todos los productos 
-- Ruta para contactarse con la marca
-- Ruta para acceder a todas las ventas (admin)
-- Ruta para acceder a todas tus compras 
-- Ruta para generar el tracking de un envio en tiempo real
+USER:
+- OK Ruta para crear un user - RUTA ABIERTA
+- OK Ruta para log in - RUTA ABIERTA
+- OK Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN
+- OK Ruta para que el usuario vea su perfil - RUTA PRIVADA USER
+- OK Ruta para que el user modifique su perfil - RUTA PRIVADA USER
+- OK Ruta para que el user eimine su cuenta - RUTA PRIVADA USER
+- OK Ruta para que el admin modifique un user - RUTA PRIVADA ADMIN
+- OK Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN
+- Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN
+- Ruta para acceder a todas tus compras - RUTA PRIVADA USER
+
+
+PRODUCT:
+- OK Ruta para ver todos los productos - RUTA ABIERTA
+- OK Ruta para ver un producto - RUTA ABIERTA
+- OK Ruta para crear un producto - RUTA PRIVADA ADMIN
+- OK Ruta para modificar un producto - RUTA PRIVADA ADMIN
+- OK Ruta para eliminar un producto - RUTA PRIVADA ADMIN
+- OK Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO
+- Ruta para seleccionar y agregar uno o varios productos en mi carrito - RUTA PRIVADA
+
+
+
+CATEGORY:
+- OK Ruta para ver una categoria - RUTA ABIERTA
+- OK Ruta para ver todas las categorías - RUTA ABIERTA
+- OK Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO
+- OK Ruta para crear categoria nueva - RUTA PRIVADA ADMIN
+- OK Ruta para modificar una categoria - RUTA PRIVADA ADMIN
+- OK Ruta para eliminar una categoria - RUTA PRIADA ADMIN
+
+
+
+
+
+- Ruta para acceder según tipo de user - RUTA PRIVADA
+- Ruta para contactarse con la marca - RUTA ABIERTA
+- Ruta para generar el tracking de un envio en tiempo real - RUTA PRIVADA
+- Ruta para finalizar la compra - RUTA PRIVADA
+- Ruta para efectuar el pago (plataforma de pagos) - RUTA PRIVADA

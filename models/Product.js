@@ -12,15 +12,28 @@ const productSchema = new mongoose.Schema({                       // Creo un bor
         type: String,
         maxlength:450,
         minlength: 10,
-        require: true
+        required: true
      },
      price:{
         type: String,
         require: true
      },
+     category:{
+      type: mongoose.Types.ObjectId,                              // le pido a la funcion .types de mongoose que relacione mi objeto producto con el id de algun objeto de referencia Category
+      ref: "Category",
+      required: true
+     },
+     subcategory:{
+      type: mongoose.Types.ObjectId,                              // le pido a la funcion .types de mongoose que relacione mi objeto producto con el id de algun objeto de referencia Category
+      ref: "Subcategory"
+     },
      image:{
       type: Object
+     },
+     stock:{
+      type: Number
      }
+     
 },
 {timestamps: true})                                              // me escribe últ fecha de edición, fecha de creación 
 

@@ -22,8 +22,10 @@ es lo mismo, callback o arrow function
 - Problema para subir a git hub con clave http 
 
 - Cada vez que querramos usar una funcion de una dependencia, tenemos que previamente requerirla para cada archivo?
+si siempre
 
 - El código de los archivos de modelos se pueden cambiar o ya quedan asi para siempre? por ejemplo las propiedades de la key TITLE dentro del schema
+si se puede pero los anteriores no se actualizan solos.
 
 - Siempre que nombro una funcion tengo que nombrar a su dependencia correspondiente?
 
@@ -38,6 +40,82 @@ es lo mismo, callback o arrow function
 - Cuando escribo un precio es una string o un number?
 Es una string, el valor de € para indicar un precio se lo damos en el Front
 
-- Puede haber un get sin un post antes? si en teoria ese get obtiene datos que yo haya creado en mi DB con el post
+- Puede haber un get sin un post antes? si en teoria ese get obtiene datos que yo haya creado en mi DB con el post 
 
 - Que pasa si no pongo condiciones, se crea igual?
+
+
+
+condicion mail ya existente o tipo de contraseña
+
+- tema de error.message
+me indica exactamente cual o donde esta el error
+
+- Con la funcion delete se puede eliminar una key en concreto o se borra todo el objeto completo?
+se elimina desde el modelo y vuelvo a crear el objeto. Con la funcion delete no puedo eliminar una key en concreto
+
+- Puedo poner condiciones sobre una propiedad si no lo puse en el modelo? Por ej el length
+si se puede, se ponen ambas para reforzar la seguridad
+
+- Si en el validatePassword ya le estamos pidiendo que cumpla x condiciones, hace falta poner una condicion aparte por ej para la cant minima de caracteres?
+no hace falta pero se puede poner dos veces para reforzar el codigo, lo mismo que el required
+
+- Declaración de variables ¿?
+
+- La condicion para validar mail, me corrobora que se cumpla el formato @ o que el mail exista realmente? 
+solo corrobora el formato del correo, no corrobora que el mail exista realmente
+
+
+TOKEN
+- decidimos nosotros si queremos que el user quede logeado despues de registrarse o si cuando termina el registro va a ser re-dirigido a otra pagina para q inicie sesion?
+
+- La clave token es cada vez que nos loguemos una diferente? 
+se genera una nueva cada vez que nos loguemos - no tiene que ver con el tiempo de expiracion
+
+- Se utiliza token para las rutas abiertas?
+no - solamente para rutas privadas/cerradas
+
+RUTA ADMIN:
+- como sabe que el user 1 es el admin y el 2 el user pro?
+
+- que pasa si le requiero por el body al user el role en el registro y si elije userPro que aparezcann otras condiciones como cargar por ejemplo sus datos fiscales y de facturacion en 2 nuevos inputs
+
+- el user 1 y 2 pueden crear productos y categorias, 
+el user 1 no puede acceder a lo del 2
+el 2 puede acceder a lo del 1 
+
+RELACIÓN ENTRE MODELOS
+ - el get-user, una vez logeado, no se puede poner directamente el return correcto, si ya se logio ya lo encontro, 
+ es mejor ponerlo para reforzar la seguridad del codigo 
+
+ - El .select va con la funcion find y el .populate va con el findById?
+
+- el subcategory se agrega igual que la category? se agrega en la variable que lo requiero por el body y luego en el newproduct?
+
+
+
+
+- por qué algunas variables las ponemos con let/const y porque algunas van con {}?
+CONST es para indicar un dato fijo (por ej. "name" lo que requiero por el body, siempre es lo mismo, a todos les pido lo mismo) 
+y LET es lo contrario (por ej. los datos que ingreso en el body, siempre van a ser distintos, es una variable que cambia, las propiedades que requiere SI siguen siendo los mismos, cambian los datos ingresados)
+en node.js se utiliza casi siempre CONST. 
+
+-cada vez que cambio algo con el put:id tengo que cambiar en el codigo que es lo que quiero modificar?
+no, se agregan todos los datos posibles a cambiar dentro del parámetro de la variable
+
+-para crear una categoria, entonces tenemos que ya saber cuales son mis subcategorias?
+creo subcategoria, le asigno una categoria a través del id 
+
+-en el codigo se relaciona la img con un producto o todo a traves del postman?
+todo a través de postman, no hay que relacionar nada en el codigo, solo agregar la propiedad image en el modelo de product
+
+-como le damos estilo a la imagen?
+
+-como se suben mas de una foto a un producto?
+
+-se puede cambiar una imagen de un producto ya creado?
+
+PAYMENT ROUTER:
+errores:
+- cart.filter is not a function
+-no se me borra la imagen de la base de datos ni de cloudinary, pero corroboro que se borra porque lo busco con el link y no lo encuentra, sale error

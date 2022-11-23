@@ -7,13 +7,10 @@ const categorySchema  = new mongoose.Schema({
         minlength:3,    
         require: true
     },
-    description:{
-        type: String, 
-    },
-    products:{
-        type: Array,
-        require: true
-    }
+    subcategory:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Subcategory"
+    }]
 })
 
 module.exports = mongoose.model("Category", categorySchema)
