@@ -85,37 +85,37 @@ Comandos para arrancar el servidor => npm run dev
 <h2>RUTAS:</h2>
 <h3>USER:</h3>
 <p>
-- Ruta para crear un user - RUTA ABIERTA
-- Ruta para log in - RUTA ABIERTA
-- Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN
-- Ruta para que el usuario vea su perfil - RUTA PRIVADA USER
-- Ruta para que el user modifique su perfil - RUTA PRIVADA USER
-- Ruta para que el user eimine su cuenta - RUTA PRIVADA USER
-- Ruta para que el admin modifique un user - RUTA PRIVADA ADMIN
-- Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN
-- Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN
-- Ruta para acceder a todas tus compras - RUTA PRIVADA USER
+- Ruta para crear un user - RUTA ABIERTA <br>
+- Ruta para log in - RUTA ABIERTA<br>
+- Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN<br>
+- Ruta para que el usuario vea su perfil - RUTA PRIVADA USER<br>
+- Ruta para que el user modifique su perfil - RUTA PRIVADA USER<br>
+- Ruta para que el user eimine su cuenta - RUTA PRIVADA USER<br>
+- Ruta para que el admin modifique un user - RUTA PRIVADA ADMIN<br>
+- Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN<br>
+- Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN<br>
+- Ruta para acceder a todas tus compras - RUTA PRIVADA USER<br>
 </p>
 
 <h3>PRODUCT:</h3>
 <p>
-- Ruta para ver todos los productos - RUTA ABIERTA
-- Ruta para ver un producto - RUTA ABIERTA
-- Ruta para crear un producto - RUTA PRIVADA ADMIN
-- Ruta para modificar un producto - RUTA PRIVADA ADMIN
-- Ruta para eliminar un producto - RUTA PRIVADA ADMIN
-- Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO
+- Ruta para ver todos los productos - RUTA ABIERTA<br>
+- Ruta para ver un producto - RUTA ABIERTA<br>
+- Ruta para crear un producto - RUTA PRIVADA ADMIN<br>
+- Ruta para modificar un producto - RUTA PRIVADA ADMIN<br>
+- Ruta para eliminar un producto - RUTA PRIVADA ADMIN<br>
+- Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO<br>
 - Ruta para seleccionar y agregar uno o varios productos en mi carrito - RUTA PRIVADA
 </p>
 
 
 <h3>CATEGORY:</h3>
 <p>
-- Ruta para ver una categoria - RUTA ABIERTA
-- Ruta para ver todas las categorías - RUTA ABIERTA
-- Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO
-- Ruta para crear categoria nueva - RUTA PRIVADA ADMIN
-- Ruta para modificar una categoria - RUTA PRIVADA ADMIN
+- Ruta para ver una categoria - RUTA ABIERTA<br>
+- Ruta para ver todas las categorías - RUTA ABIERTA<br>
+- Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO<br>
+- Ruta para crear categoria nueva - RUTA PRIVADA ADMIN<br>
+- Ruta para modificar una categoria - RUTA PRIVADA ADMIN<br>
 - Ruta para eliminar una categoria - RUTA PRIADA ADMIN
 </p>
 </div>
