@@ -115,6 +115,8 @@ todo a través de postman, no hay que relacionar nada en el codigo, solo agregar
 
 -se puede cambiar una imagen de un producto ya creado?
 
+-como elimino un producto del carrito?
+
 PAYMENT ROUTER:
 errores:
 - cart.filter is not a function
