@@ -112,12 +112,14 @@ todo a través de postman, no hay que relacionar nada en el codigo, solo agregar
 -como le damos estilo a la imagen?
 
 -como se suben mas de una foto a un producto?
+lo pongo como array 
 
 -se puede cambiar una imagen de un producto ya creado?
+ruta de modificar un producto
 
 -como elimino un producto del carrito?
 
 PAYMENT ROUTER:
 errores:
 - cart.filter is not a function
--no se me borra la imagen de la base de datos ni de cloudinary, pero corroboro que se borra porque lo busco con el link y no lo encuentra, sale error
+

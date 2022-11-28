@@ -91,7 +91,7 @@ Comandos para arrancar el servidor => npm run dev
 .get(/user) Ruta para que el usuario vea su perfil - RUTA PRIVADA USER<br>
 .put(/user) Ruta para que el user modifique su perfil - RUTA PRIVADA USER<br>
 .delete(/user) Ruta para que el user elimine su cuenta - RUTA PRIVADA USER<br>
-- Ruta para que el admin modifique un user - RUTA PRIVADA ADMIN<br>
+.putRuta para que el admin modifique un user - RUTA PRIVADA ADMIN<br>
 - Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN<br>
 - Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN<br>
 - Ruta para acceder a todas tus compras - RUTA PRIVADA USER<br>
