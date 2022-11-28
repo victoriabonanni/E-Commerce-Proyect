@@ -82,7 +82,7 @@ productsPro
 ProductRouter.get("/product/:id", async (req, res) => {                            // Devuelve un objeto en concreto a través del ID de la DB
 const {id} = req.params                                                            // el id lo pasamos por parámetros {}
 try {
-  let product = await Product.findById(id).populate("category")      // "espera" busca dentro de la colección creada Product a través del metodo ID y me va a devolver todo el objeto con ese ID. 
+  let product = await Product.findById(id).populate({path:"category", select:"title"}).populate({path:"subcategory", select:"title"})      // "espera" busca dentro de la colección creada Product a través del metodo ID y me va a devolver todo el objeto con ese ID. 
 return res.status(200).json({                                                               // .populate desglosa el objeto creado dentro de otro objeto, puedo solicitarlo completo ("category") o seleccionar alguna propiedad en concreto ({path:"category", select:"title"})
   success: true,
   product,

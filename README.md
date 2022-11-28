@@ -78,19 +78,19 @@ Comandos para arrancar el servidor => npm run dev
 
 <h2>MODELOS DE DATOS DE MI APLICACIÓN</h2>
 
-<img src="./imagenes/modelos.png"  style="width:500px; height:500px; text-align:center"></img>
+<img src="./imagenes/modelos.png"  style="width:570px; height:500px; text-align:center"></img>
 
 
 <div>
 <h2>RUTAS:</h2>
 <h3>USER:</h3>
 <p>
-- Ruta para crear un user - RUTA ABIERTA <br>
-- Ruta para log in - RUTA ABIERTA<br>
-- Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN<br>
-- Ruta para que el usuario vea su perfil - RUTA PRIVADA USER<br>
-- Ruta para que el user modifique su perfil - RUTA PRIVADA USER<br>
-- Ruta para que el user eimine su cuenta - RUTA PRIVADA USER<br>
+.post(/register) Ruta para crear un user - RUTA ABIERTA <br>
+.post(/login) Ruta para log in - RUTA ABIERTA<br>
+.get(/users) Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN<br>
+.get(/user) Ruta para que el usuario vea su perfil - RUTA PRIVADA USER<br>
+.put(/user) Ruta para que el user modifique su perfil - RUTA PRIVADA USER<br>
+.delete(/user) Ruta para que el user elimine su cuenta - RUTA PRIVADA USER<br>
 - Ruta para que el admin modifique un user - RUTA PRIVADA ADMIN<br>
 - Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN<br>
 - Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN<br>
