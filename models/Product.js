@@ -27,9 +27,9 @@ const productSchema = new mongoose.Schema({                       // Creo un bor
       type: mongoose.Types.ObjectId,                              // le pido a la funcion .types de mongoose que relacione mi objeto producto con el id de algun objeto de referencia Category
       ref: "Subcategory"
      },
-     image:[{
+     image:{
       type: Object
-     }],
+     },
      stock:{
       type: Number
      }

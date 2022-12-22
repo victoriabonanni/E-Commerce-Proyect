@@ -1,0 +1,35 @@
+.new { 
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 50px;
+   text-align: center;
+   text-decoration: underline;
+   padding-bottom: 15px;
+}
+
+.sale { 
+    width: 150px;
+    height: 150px;
+    
+    margin-top: 50px;
+    margin-right:25px;
+}
+
+.box{
+  flex-direction: column;
+}
+
+.titulo{
+    padding-top: 20px;
+    font-size: 24px;
+   
+}
+
+.carusel{
+padding-top: 0px;
+}
+.newinFoto{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+}

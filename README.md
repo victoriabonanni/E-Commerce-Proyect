@@ -9,8 +9,8 @@ No es necesario registrarse para ver todas las categorias y productos, pero sí 
 <h2>Tecnologías empleadas</h2>
 <ul>
  <li><img src="./imagenes/jslogo.png"  style="width:50px; height:50px; text-align:center"></img></li>
- <li><img src="./imagenes/MongoLogo.jpeg"  style="width:50px; height:50px; text-align:center"></img></li>
- <li><img src="./imagenes/nodejslogo.png"  style="width:50px; height:50px; text-align:center"></img></li>
+ <li><img src="./imagenes/MongoLogo.jpeg"  style="width:80px; height:60px; text-align:center"></img></li>
+ <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li>
  <li><img src="./imagenes/cloudinary.png"  style="width:50px; height:50px; text-align:center"></img></li>
 </ul>
 

@@ -1,0 +1,16 @@
+.formEdit{
+    margin-top: 50px;
+}
+.upload{
+    width: 60%;
+    padding: 10px
+}
+.titulo{
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.form{
+    margin-bottom: 30px;
+}

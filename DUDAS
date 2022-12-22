@@ -123,3 +123,33 @@ PAYMENT ROUTER:
 errores:
 - cart.filter is not a function
 
+FRONT:
+- No me aparecio el archivo .git para borrar
+
+- El npx es una única vez para instalar el front en el back? 
+si, la primera vex para iniciar un proyecto y despues solo levanto el servidor con el cd client y npm start
+
+- en el app.js no se importa React?
+no, porque lo reconoce solo por el archivo app
+
+- Como abro el "live server" de react de nuevo¿?
+localhost:3000 y se abre solo
+
+- Tuve que borrar los corchetes de array (para agregar mas de una foto) del modelo de product para que se me renderizara
+
+- el componente que yo importe en el componente de home, va a ser lo que yo quiero mostrar en la home?
+si la importo en el app.js se muestra en todos y sino la invoco solamente en los componentes que la quiero mostrar y no en el app.js
+
+- No se me muestra en consola la array de productos, solo el response.data o sino me muestra la array en 0.
+era porque el console.log estaba hecho
+- Por que el bootstrap nos da algunas etiquetas sin cerrar?
+
+- Siempre que creamos un archivo css hay que importarlo al index.css?
+si
+
+- Los succesM y errorM pueden declararse en cualquier lado?
+dentro de la funcion principal y antes de utilizarlos
+
+- cual es la diferencia entre el handlechange y el onchangeinput?
+
+- No se me importo automaticamente el Link

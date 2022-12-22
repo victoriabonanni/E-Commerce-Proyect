@@ -12,6 +12,13 @@ description:{
 category:{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category"
+},
+products:[{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Product"
+}],
+image:{
+    type: Object
 }
 })
 

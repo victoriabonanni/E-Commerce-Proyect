@@ -7,9 +7,19 @@ const categorySchema  = new mongoose.Schema({
         minlength:3,    
         require: true
     },
+    description:{
+        type: String
+    },
+    image:{
+        type: Object
+       },
     subcategory:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Subcategory"
+    }],
+    products:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product"
     }]
 })
 

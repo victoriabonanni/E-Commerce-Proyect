@@ -1,0 +1,31 @@
+.product{
+    text-decoration: none;
+    color: black;
+    width: 60%;
+    margin: auto;
+}
+
+.cproduct{
+    width: 90%;
+    margin:auto
+}
+
+.products{
+    margin-top: 50px;
+}
+.formEdit{
+    margin-top: 30px;
+}
+.upload{
+    width: 60%;
+    padding: 10px
+}
+.titulo{
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.form{
+    margin-bottom: 30px;
+}

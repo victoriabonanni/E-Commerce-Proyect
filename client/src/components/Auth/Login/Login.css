@@ -1,0 +1,89 @@
+.login{
+    padding-top: 70px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+.titulos{
+    font-size:15px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+.password{
+    display: flex;
+    width: 105%
+    
+}
+.formulario {
+    width: 60%;
+   margin:auto;
+    text-align: center;
+    
+}
+
+.botones{
+    background-color: #3c3d41;
+    border: 0px;
+    margin-top: 10px;
+    font-size:small;
+    margin-bottom: 30px;
+
+}
+.botones2{
+   text-decoration: none;
+   margin: auto;
+    margin-top: 10px;
+    font-size:small;
+    margin-bottom: 30px;
+    width: 60%;
+   
+}
+.formulario2 {
+    width: 80%;
+   margin:auto;
+    text-align: center;
+    
+}
+.show{
+    position:relative;
+    right: 25px;
+    top: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: gray;
+    background-color: transparent;
+    
+    
+}
+.divider{
+   padding-top: 20px;
+   padding-bottom: 20px;
+    width: 90%;
+    margin: auto;
+  
+}
+
+.register{
+    /* margin:auto; */
+    text-align: center;
+    font-size: small;
+    margin-top: -20px;
+    padding-bottom: 15px;
+    
+}
+.password_text{
+    margin:auto;
+    text-align: center;
+    font-size: small;
+    padding-bottom: 10px;
+    
+}
+.logout{
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    padding-top: 100px;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

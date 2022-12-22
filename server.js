@@ -4,13 +4,14 @@ const app = express()
 require("dotenv").config()
 const mongoose = require("mongoose")
 const fileUpload = require("express-fileupload")          // dependencia/funcion que me permite subir archivos por el front
-
+const cors = require("cors")
 // AUTORIZACIÓN PARA AGREGAR DATOS POR POSTMAN A MI DB
 app.use(express.json({extended: true}))      
 app.use(express.urlencoded())                             // le indico al servidor (app) que me permita tomar datos a través del urlencoded (en este caso texto) del postman
 app.use(fileUpload({
     useTempFiles: true                                    // le paso una propiedad
 }))
+app.use(cors())
 
 // IMPORT ROUTES - segunda linea
 const ProductRouter = require("./routes/ProductRouter")   // importo/ejecuto todas las rutas que encuentr en ProductRouter.js

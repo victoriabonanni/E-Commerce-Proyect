@@ -11,31 +11,25 @@ const authAdmin = require("../middleware/authAdmin")
 
                                                                        // añado objetos (users en este caso) a mi base de datos respetando ciertas condiciones
 UserRouter.post("/register", async (req, res) => {                   // "/user" va a indicar el nombre de mi end-point - sustantivo y minuscula siempre
-  const { nombre, apellido, mail, password } = req.body;               // Declaro una variable para guardar lo que el user mete por el body (página web) 
+  const {name, email, password} = req.body;               // Declaro una variable para guardar lo que el user mete por el body (página web) 
   try {
-    const user = await User.findOne({ mail });                         // va a encontrarme si tengo algun usuario dentro del modelo User que tenga el mismo mail que le pase antes por el body
+    const user = await User.findOne({email});                         // va a encontrarme si tengo algun usuario dentro del modelo User que tenga el mismo mail que le pase antes por el body
     if (user) {
       return res.status(400).json({
         success: false,
         message: "This User is already registered, try another one",
       });
     }                                                                  // si llega a haber un user con ese mismo mail, devuelveme un error status 400 en formato json y con un mensaje.
-    if (!nombre || !apellido || !mail || !password) {                  // condiciones para crear mis objetos en la DB -
+    if (!name || !email || !password) {                  // condiciones para crear mis objetos en la DB -
       return res.status(400).json({                                    // si no hay nombre o apellido o mail o password devuelveme una respuesta con el error status 400 (error cliente) en formato json y con un mensaje de error.
         success: false,
         message: "Please fill all the fields",
       });
     }
-    if (nombre.length < 2) {                                           // si el largo del nombre es menor a 2 caracteres, devuelveme un error status 400 en formato json y con un mensaje
+    if (name.length < 2) {                                           // si el largo del nombre es menor a 2 caracteres, devuelveme un error status 400 en formato json y con un mensaje
       return res.status(400).json({
         success: false,
         message: "The name must be between 2 and 20 characters",
-      });
-    }
-    if (apellido.length < 2) {
-      return res.status(400).json({
-        success: false,
-        message: "The surname must be between 2 and 20 characters",
       });
     }
     if (password.length < 6) {                                          // regla general: las password tienen que tener mínimo 6 caracteres
@@ -45,11 +39,11 @@ UserRouter.post("/register", async (req, res) => {                   // "/user" 
       });
     }                            
                                                                        // condiciones que tiene que cumplir el MAIL, como su formato xxx@xxx.com
-    const validateMail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!validateMail.test(mail)) {                                    // "niego" (!) la validacion para que el .test me haga un testeo de todas estas condiciones
+    const validateEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!validateEmail.test(email)) {                                    // "niego" (!) la validacion para que el .test me haga un testeo de todas estas condiciones
       return res.status(400).json({
         success: false,
-        message: "The mail is not valid",
+        message: "The email is not valid",
       });
     }
     const validatePassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/;
@@ -63,9 +57,8 @@ UserRouter.post("/register", async (req, res) => {                   // "/user" 
     let passwordHash = bcrypt.hashSync(password, saltRounds)            // encriptación de password recibe dos argumentos(la password y cuantas vueltas)
                                                                         // la funcion .hashSync es la encargada de ejecutar el hasheo # segun la password q puse y las vueltas (salt) declaradas más arriba
     let newuser = new User({                                            // declaro una variable para guardar un nuevo objeto nuevo (user) según las propiedades declaradas por el body y valores que le hayamos dado en el modelo - 
-      nombre,
-      apellido,
-      mail,
+      name,
+      email,
       password:passwordHash,
     });
 
@@ -87,9 +80,9 @@ UserRouter.post("/register", async (req, res) => {                   // "/user" 
 });
 
 UserRouter.post("/login", async (req,res)=>{                           // para el login de un usuario ya registrado - le requiero que por el body pase el mail y la password.  
-  const {mail, password} = req.body;
+  const {email, password} = req.body;
   try {                           
-    const user = await User.findOne({mail})                            // primero valido el mail y con .findOne le pido que busque si ese mail ingresado por el body ya esta registrado 
+    const user = await User.findOne({email})                            // primero valido el mail y con .findOne le pido que busque si ese mail ingresado por el body ya esta registrado 
     if(!user){                                                         // pero si NO (!) esta registrado, devuelveme un error status 400 - error de cliente en formato json y con un mensaje
       return res.status(400).json({
         success: false,
@@ -109,7 +102,8 @@ const accessToken = createToken({id: user._id})
     return res.status(200).json({                                       // si existe y es favorable
       success: true, 
       message: "User logged in successfully",
-      accessToken
+      accessToken,
+      user
     })
     
   } catch (error) {
@@ -120,26 +114,50 @@ const accessToken = createToken({id: user._id})
   }
 })
 
+// UserRouter.get("/users", auth, authAdmin, async (req, res) => {
+//   try {
+//     let users = await User.find({})
+//     // .select("name email");
+//     if(!users){
+//       return res.status(400).json({
+//         success:false,
+//         message: "No users found in the Database"
+//       })
+//     }
+//     return res.status(200).json({
+//       success: true,
+//       users,
+//     });
+//   } catch (error) {
+//     return res.status(500).json({
+//       success: false,
+//       message: error.message
+//     });
+//   }
+// });
+
 UserRouter.get("/users", auth, authAdmin, async (req, res) => {
   try {
-    let users = await User.find({}).select("nombre apellido");
-    if(!users){
-      return res.status(400).json({
-        success:false,
-        message: "No users found in the Database"
+      let users = await User.find({}).select("name surname email phone adress")
+      console.log(users)
+      if (!users) {
+          return res.status(400).json({
+              succes: false,
+              message: "Users not found"
+          })
+      }
+      return res.status(200).json({
+          success: true,
+          users
       })
-    }
-    return res.status(200).json({
-      success: true,
-      users,
-    });
+
   } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Internal server error",
-    });
+      return res.status(500).json({
+          success: false,
+          message: error.message
+      });
   }
-});
+})
 
 UserRouter.get("/user", auth, async (req, res) => {                 // Devuelve el user que este logeado
   try {                                                             // el auth sirve para logearte y asi tener acceso a todo el user
@@ -162,9 +180,16 @@ UserRouter.get("/user", auth, async (req, res) => {                 // Devuelve 
   })
 
 UserRouter.put("/user", auth, async (req, res) => {
-    const { nombre, apellido, mail, password } = req.body
+    const { name, email, password } = req.body
   try {
-      const user = await User.findByIdAndUpdate(req.user.id, {nombre, apellido, mail, password});
+      const user = await User.findById(req.user.id);
+      const Password = user.password
+      let passwordHash = bcrypt.hashSync(password, saltRounds)
+      await User.findByIdAndUpdate(req.user.id, {
+        name,
+        email,
+        password: passwordHash
+      })
       if(!user)                                                         // (req.user.id) : me da acceso a todo el usuario
       return res.status(400).json({                                         
       success: false,
@@ -203,12 +228,30 @@ UserRouter.delete("/user", auth, async (req, res) => {
     }
   });
 
+// UserRouter.get("/user/:id", auth, authAdmin, async (req, res) => {                            // Devuelve un objeto en concreto a través del ID de la DB
+//     const {id} = req.params                                                            // el id lo pasamos por parámetros {}
+//     try {
+//       let user = await User.findById(id)     // "espera" busca dentro de la colección creada Product a través del metodo ID y me va a devolver todo el objeto con ese ID. 
+//     return res.status(200).json({                                                               // .populate desglosa el objeto creado dentro de otro objeto, puedo solicitarlo completo ("category") o seleccionar alguna propiedad en concreto ({path:"category", select:"title"})
+//       success: true,
+//       user,
+//       message: "Product found saccessfully"
+//     })
+//     } catch (error) {
+//       return res.status(500).json({
+//     success: false,
+//     message: "Internal server error"
+    
+//       })
+//     }
+//     })  
+
 UserRouter.put("/user/:id", auth, authAdmin, async (req, res) => {
   // Modificar un objeto en concreto
   const { id } = req.params; // paso el id por parámetros {}
-  const { nombre, apellido, mail } = req.body; // paso por el body el valor que voy a querer cambiar
+  const { name, email } = req.body; // paso por el body el valor que voy a querer cambiar
   try {
-    await User.findByIdAndUpdate(id, { nombre, apellido, mail });
+    await User.findOneAndUpdate(id, { name, email });
     return res.status(200).json({
       success: true,
       message: "User updated successfully",
@@ -225,7 +268,7 @@ UserRouter.delete("/user/:id", auth, authAdmin, async (req, res) => {
   // Elimina un objeto
   const { id } = req.params;
   try {
-    await User.findByIdAndDelete(id);
+    await User.findOneAndDelete(id);
     return res.status(200).json({
       success: true,
       message: "User deleted successfully",

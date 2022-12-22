@@ -1,15 +1,17 @@
 const express = require("express");
 const Product = require("../models/Product");
 const ProductRouter = express.Router();
+const Category = require("../models/Category")
+const Subcategory = require("../models/Subcategory")
 const auth = require("../middleware/auth")                                          // para hacer privada una ruta declaro la función auth que se a voy a requerir al archivo auth.js en donde se ejecuta ese codigo
 const authAdmin = require("../middleware/authAdmin")                                // para crear rutas solamente de admin
-const authPro = require("../middleware/authPro")                                    // ruta privada del user pro
+const authPro = require("../middleware/authPro");                                    // ruta privada del user pro
 
 ProductRouter.post("/product", auth, authAdmin, async (req, res) => {              // añado objetos a mi base de datos respetando ciertas condiciones
                                                                         // "/product" va a indicar el nombre de mi end-point - sustantivo y minuscula siempre
   const { title, description, price, categoryId, subcategoryId, image } = req.body;                       // el auth es para ejecutar dicha funcion (const auth) y hacer la ruta privada. No se me va a ejecutar esa ruta sin autorizacion. Si el auth esta ok, ademas le ejecuto la funcion de authAdmin para indicar que esa ruta es solamente para admin
   try {                                                              
-    if (!title || !description || !price || !categoryId || !image) {                             // condiciones para crear mis objetos en la DB - son condiciones para nosotros, no tiene nada q ver con el cliente, esos mensajes no son alertas q ve el cliente
+    if (!title || !description || !price || !image) {                             // condiciones para crear mis objetos en la DB - son condiciones para nosotros, no tiene nada q ver con el cliente, esos mensajes no son alertas q ve el cliente
       return res.status(400).json({                                     // si no hay title, ni description, etc en el require body, devuelveme una respuesta con el status en formato json y que tire un mensaje.
         success: false,
         message: "Please fill all the fields",
@@ -35,7 +37,17 @@ ProductRouter.post("/product", auth, authAdmin, async (req, res) => {           
       subcategory: subcategoryId,
       image
     });
-    await product.save();                                              // "espera" antes de darme una respuesta, con la funcion .save me guarda ese objeto let product en mi base de datos
+    await product.save();
+    await Category.findByIdAndUpdate(categoryId, {
+      $push: {
+        products: product._id
+      }
+    });   
+    await Subcategory.findByIdAndUpdate(subcategoryId, {
+      $push: {
+        products: product._id
+      }
+    })                                                                         // "espera" antes de darme una respuesta, con la funcion .save me guarda ese objeto let product en mi base de datos
     return res.status(200).json({
       success: true,
       product,
@@ -44,7 +56,7 @@ ProductRouter.post("/product", auth, authAdmin, async (req, res) => {           
   } catch (error) {                                                    // el catch siempre tira errores de servidor (500)
     return res.status(500).json({
       success: false,
-      message: "Internal server error",
+      message: error.message
     });
   }
 });
@@ -82,7 +94,7 @@ productsPro
 ProductRouter.get("/product/:id", async (req, res) => {                            // Devuelve un objeto en concreto a través del ID de la DB
 const {id} = req.params                                                            // el id lo pasamos por parámetros {}
 try {
-  let product = await Product.findById(id).populate({path:"category", select:"title"}).populate({path:"subcategory", select:"title"})      // "espera" busca dentro de la colección creada Product a través del metodo ID y me va a devolver todo el objeto con ese ID. 
+  let product = await Product.findById(id).populate({path:"category", select:"title products"}).populate({path:"subcategory", select:"title"})      // "espera" busca dentro de la colección creada Product a través del metodo ID y me va a devolver todo el objeto con ese ID. 
 return res.status(200).json({                                                               // .populate desglosa el objeto creado dentro de otro objeto, puedo solicitarlo completo ("category") o seleccionar alguna propiedad en concreto ({path:"category", select:"title"})
   success: true,
   product,
@@ -99,9 +111,9 @@ message: "Internal server error"
 
 ProductRouter.put("/product/:id", auth, authAdmin, async (req,res)=>{              // Modificar un objeto en concreto
 // const {id} = req.params;                                              // paso el id por parámetros {}
-const {title, description, price} = req.body                                              // paso por el body el valor que voy a querer cambiar
+const {title, description, price, categoryId, subcategoryId, image} = req.body                                              // paso por el body el valor que voy a querer cambiar
 try {
-  await Product.findOneAndUpdate({_id: req.params.id}, {title, description, price})                        
+  await Product.findByIdAndUpdate({_id: req.params.id}, {title, description, price, categoryId, subcategoryId, image})                        
   return res.status(200).json({
     success: true,
     message: "Product updated successfully"
