@@ -8,6 +8,7 @@ const User = () => {
     const [user, setUser] = useState({})     // creo un state donde voy a guardar el objeto q reciba con el useEffect       
     const token = localStorage.getItem("token")
     // const role = localStorage.getItem("role")
+    const name = localStorage.getItem("name")
 
     const [successM, setSuccessM] = useState(null)    // mensaje satisfatorio, alerta de okey
     const [errorM, setErrorM] = useState(null)
@@ -58,19 +59,79 @@ const User = () => {
     }
 
     return (
-        <div>
-            <h1 className="products">Mi Cuenta</h1>
-            <div key={user._id}>
-                <h3>{user.name}</h3>
-                <h4>{user.email}</h4>
-                <input type="password" name="password" value={user.password}></input>
-
+        <div class="profile container-fluid">
+            <h1 className="title1">Hola {user.name}</h1>
+            <p class="text-muted">Aquí tienes un resumen del estado de tu cuenta y acciones rápidas a lo más utilizado.</p>
+<div class="card_data">
+            <div key={user._id} class="card">
+                <div class="card-header">
+                    DATOS PERSONALES
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nombre: {user.name}</li>
+                    <li class="list-group-item">Email de contacto: {user.email}</li>
+                    <label class="list-group-item">Contraseña:  <input type="password" name="password" value={user.password} class="password" />
+                    </label>
+                </ul>
             </div>
-            <div>
-                <Link to={"/edit_myprofile"}>
-                    <button>Editar mis datos</button>
-                </Link>
-                <button onClick={deleteUser}>Eliminar mi Cuenta</button>
+
+
+            <Link to={"/edit_myprofile"}>
+                <button class="button">Editar mis datos</button>
+            </Link>
+
+
+            {/* <hr class="divider" /> */}
+            <div class="card">
+                <div class="card-header">
+                    DATOS DE PAGO
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nº Tarjeta: xxxx xxxx xxxx xxxx</li>
+                    <li class="list-group-item">Dirección de envío: </li>
+                </ul>
+            </div>
+            <Link to={"/edit_myprofile"}>
+                <button class="button">Editar datos de pago</button>
+            </Link>
+            </div>
+            {/* <hr class="divider" /> */}
+
+            <h5 class="title2">MIS PEDIDOS</h5>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>23/09/22</td>
+                        <td>Enviado</td>
+                        <td>36€</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>03/11/22</td>
+                        <td>Enviado</td>
+                        <td>128€</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>22/12/22</td>
+                        <td>En reparto</td>
+                        <td>43€</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="button2">
+            <button class="button">Ayuda con un pedido</button>
+            <button class="button" onClick={deleteUser}>Eliminar mi Cuenta</button>
             </div>
             <div class="alert alert-success" role="alert" style={{ display: successM ? "block" : "none" }}>
                 {successM}

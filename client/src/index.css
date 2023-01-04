@@ -18,5 +18,6 @@ code {
 @import url("./components/Home/Home.css");
 @import url("./components/Footer/Footer.css");
 @import url("./components/Category/Category.css");
-@import url("./components/Subcategory/Subcategory.css")
+@import url("./components/Subcategory/Subcategory.css");
+@import url("./components/User/User.css")
 

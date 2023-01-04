@@ -15,25 +15,30 @@ const NewIn = () => {
 
         getNewIn();
     }, []);
-console.log(productos)
-const newProduct = productos.slice(productos.length-2)
-// console.log(newProduct)
+    // console.log(productos)
+    const newProduct = productos.slice(productos.length - 2)
+    // console.log(newProduct)
     return (
-        <div>
-            <h1 className="products">Productos</h1>
+        <div className="products">
+            
             {newProduct.map((producto) => {
-
                 return (
-
-                    <Link key={producto._id} to={`/product/${producto._id}`} className="product">
-                        <div>
-                            <h3>{producto.title}</h3>
-                            <h4>{producto.price}€</h4>
-                            <p>{producto.description}</p>
-                            <img src={producto.image.url} alt={"imágen de producto"} />
+                    <Link key={producto._id} to={`/product/${producto._id}`} className="title1 tarjeta">
+                        <div class="card-text" >
+                            <img src={producto.image.url} alt={"imágen de producto"} class="card-img-top imagen" />
+                            <div class="card-body">
+                                <h3 class="titleP">{producto.title}</h3>
+                                <h3 class="titleP">{producto.price}€</h3>
+                            </div>
                         </div>
-                    </Link>)}
-              )
+                    </Link>
+
+
+
+
+                )
+            }
+            )
             }
 
         </div>

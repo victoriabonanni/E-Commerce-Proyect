@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
       <div>
         <header class="header">
-          <nav class="navbar navbar-expand-lg bg-light fixed-top">
+          <nav class="navbar fixed-top navUser">
             <div class="container-fluid">
               <a className="navbar-brand" href="/">
                 <img
@@ -28,7 +28,7 @@ const Navbar = () => {
                 />
               </a>
               <button
-                class="position-absolute top-0 start-0 menu navbar-toggler-icon"
+                class="position-absolute top-0 start-0 navbar-toggler-icon boton_toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"
@@ -216,15 +216,46 @@ const Navbar = () => {
   const NavAdmin = () => {
     return (
       <div>
-        <nav class="navbar bg-light fixed-top navAdmin">
-          <div class="container-fluid navAdmin">
+        <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+      </div>
+    )
+
+  }
+
+{/* <div class="container-fluid">
+        <nav class="navbar bg-light fixed-top">
+          <div>
             <a href="/">
               <img src={LogoAdmin} alt="" class="navbar-brand logoAdmin" />
             </a>
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title admin" id="offcanvasNavbarLabel">ADMINISTRADOR</h5>
               </div>
-                    {/* <a class="nav-item" href="/my_profile">Admin</a> */}
+                    <a class="nav-item" href="/my_profile">Admin</a>
                   
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
               <span class="navbar-toggler-icon"></span>
@@ -292,133 +323,7 @@ const Navbar = () => {
             </div>
           </div>
         </nav>
-      </div>
-    )
-
-  }
-
-  // ADMIN LOGUEADO
-  // const NavAdmin = () => {
-  //   return (
-  //     <div>
-  //       <nav class="navbar navbar-dark bg-dark fixed-top">
-  //         <div class="container-fluid">
-  //           <a class="navbar-brand" href="/">
-  //           Panel Administrador
-  //           </a>
-  //           <button
-  //             class="navbar-toggler"
-  //             type="button"
-  //             data-bs-toggle="offcanvas"
-  //             data-bs-target="#offcanvasDarkNavbar"
-  //             aria-controls="offcanvasDarkNavbar"
-  //           >
-  //             <span class="navbar-toggler-icon"></span>
-  //           </button>
-  //           <div
-  //             class="offcanvas offcanvas-end text-bg-dark"
-  //             tabindex="-1"
-  //             id="offcanvasDarkNavbar"
-  //             aria-labelledby="offcanvasDarkNavbarLabel"
-  //           >
-  //             <div class="offcanvas-header">
-  //               <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">
-  //                 <a className="navbar-brand" href="/">
-  //                   <img src={Logofusca} class="logoAdmin" alt="" />
-  //                 </a>
-  //               </h5>
-  //               <button
-  //                 type="button"
-  //                 class="btn-close btn-close-white"
-  //                 data-bs-dismiss="offcanvas"
-  //                 aria-label="Close"
-  //               ></button>
-  //             </div>
-  //             <div class="offcanvas-body">
-  //               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-  //                 <li class="nav-item">
-  //                   <a class="nav-link active" aria-current="page" href="">
-  //                     Ventas
-  //                   </a>
-  //                 </li>
-  //                 <li>
-  //                   <hr class="dropdown-divider" />
-  //                 </li>
-  //                 <li class="nav-item dropdown">
-  //                   <a
-  //                     class="nav-link dropdown-toggle"
-  //                     href=""
-  //                     role="button"
-  //                     data-bs-toggle="dropdown"
-  //                     aria-expanded="false"
-  //                   >
-  //                     Productos
-  //                   </a>
-  //                   <ul class="dropdown-menu dropdown-menu-dark">
-  //                     <li>
-  //                       <a class="dropdown-item" href="/all_products">
-  //                         Todos los productos
-  //                       </a>
-  //                     </li>
-  //                     <li>
-  //                       <a class="dropdown-item" href="/new_product">
-  //                         Agregar un producto
-  //                       </a>
-  //                     </li>
-  //                   </ul>
-  //                 </li>
-  //                 <li class="nav-item dropdown">
-  //                   <a
-  //                     class="nav-link dropdown-toggle"
-  //                     href=""
-  //                     role="button"
-  //                     data-bs-toggle="dropdown"
-  //                     aria-expanded="false"
-  //                   >
-  //                     Categorias
-  //                   </a>
-  //                   <ul class="dropdown-menu dropdown-menu-dark">
-  //                     <li>
-  //                       <a class="dropdown-item" href="/all_categories">
-  //                         Todas las categorias
-  //                       </a>
-  //                     </li>
-  //                     <li>
-  //                       <a class="dropdown-item" href="/new_category">
-  //                         Agregar una categoria
-  //                       </a>
-  //                     </li>
-  //                   </ul>
-  //                 </li>
-  //                 <li>
-  //                   <hr class="dropdown-divider" />
-  //                 </li>
-  //                 <li class="nav-item">
-  //                   <a class="nav-link" href="">
-  //                     Clientes
-  //                   </a>
-  //                 </li>
-  //                 <li>
-  //                   <hr class="dropdown-divider" />
-  //                 </li>
-  //                 <li class="nav-item">
-  //                   <a class="nav-link" href="">
-  //                     Perfil de Administrador
-  //                   </a>
-  //                 </li>
-  //                 <li class="nav-item">
-  //                   <a class="nav-link" href="">
-  //                     Configuración
-  //                   </a>
-  //                 </li>
-  //               </ul>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </nav>
-  //     </div>
-  //   );
-  // };
+      </div> */}
 
   // let navbar = role == 0 ? NavUser() : NavAdmin()
 

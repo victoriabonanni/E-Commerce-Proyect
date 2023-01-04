@@ -59,7 +59,7 @@ const EditProfile = () => {
     };
 
     return (
-        <div class="formulario">
+        <div class="edit_profile">
             <form className="formulario" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -67,8 +67,8 @@ const EditProfile = () => {
                     onChange={handleChange}
                     class="form-control"
                     placeholder={user.name}
-                    
                 />
+                <br />
                 <input
                     type="email"
                     name="email"
@@ -76,16 +76,17 @@ const EditProfile = () => {
                     class="form-control"
                     placeholder={user.email}
                 />
+                <br />
                 <input
                     type="password"
                     name="password"
                     onChange={handleChange}
                     class="form-control"
-                    // value={user.password}
-                    placeholder={user.password}
+                    value={user.password}
+                    // placeholder={user.password}
                 />
-
-                <button type="submit" class="btn btn-dark">
+<br />
+                <button type="submit" class="btn btn-dark button_ok">
                     MODIFICAR MI PERFIL
                 </button>
             </form>
