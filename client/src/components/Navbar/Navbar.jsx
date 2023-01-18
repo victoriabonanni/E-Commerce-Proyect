@@ -110,7 +110,7 @@ const Navbar = () => {
     return (
       <div>
         <header class="header">
-          <nav class="navbar navbar-expand-lg bg-light fixed-top">
+          <nav class="navbar navUser bg-light fixed-top">
             <div class="container-fluid">
               <a className="navbar-brand" href="/">
                 <img
@@ -120,7 +120,7 @@ const Navbar = () => {
                 />
               </a>
               <button
-                class="position-absolute top-0 start-0 menu navbar-toggler-icon"
+                class="position-absolute top-0 start-0 menu navbar-toggler-icon boton_toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarNav"

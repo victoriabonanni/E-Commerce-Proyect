@@ -87,35 +87,56 @@ Comandos para arrancar el servidor => npm run dev
 <p>
 .post(/register) Ruta para crear un user - RUTA ABIERTA <br>
 .post(/login) Ruta para log in - RUTA ABIERTA<br>
-.get(/users) Ruta para ver todos los usuarios - RUTA PRIVADA ADMIN<br>
+.get(/users) Ruta para ver todos los usuarios - RUTA ADMIN<br>
 .get(/user) Ruta para que el usuario vea su perfil - RUTA PRIVADA USER<br>
 .put(/user) Ruta para que el user modifique su perfil - RUTA PRIVADA USER<br>
 .delete(/user) Ruta para que el user elimine su cuenta - RUTA PRIVADA USER<br>
-.putRuta para que el admin modifique un user - RUTA PRIVADA ADMIN<br>
-- Ruta para que el admin elimine un user - RUTA PRIVADA ADMIN<br>
-- Ruta para acceder a todas las ventas - RUTA PRIVADA ADMIN<br>
-- Ruta para acceder a todas tus compras - RUTA PRIVADA USER<br>
+.put(/user/:id) Ruta para que el admin modifique un user - RUTA ADMIN<br>
+.delete(/user/:id) Ruta para que el admin elimine un user - RUTA ADMIN<br>
+.post(/cart) Ruta para agregar productos al carrito - RUTA PRIVADA USER<br>
+.get(/orders) Ruta para acceder a todas las ventas - RUTA ADMIN<br>
+.get(/cart) Ruta para acceder al carrito - RUTA PRIVADA USER<br>
 </p>
 
 <h3>PRODUCT:</h3>
 <p>
-- Ruta para ver todos los productos - RUTA ABIERTA<br>
-- Ruta para ver un producto - RUTA ABIERTA<br>
-- Ruta para crear un producto - RUTA PRIVADA ADMIN<br>
-- Ruta para modificar un producto - RUTA PRIVADA ADMIN<br>
-- Ruta para eliminar un producto - RUTA PRIVADA ADMIN<br>
-- Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO<br>
-- Ruta para seleccionar y agregar uno o varios productos en mi carrito - RUTA PRIVADA
+.get(/product/:id) Ruta para ver un producto en concreto - RUTA ABIERTA<br>
+.get(/products) Ruta para ver todos los productos - RUTA ABIERTA<br>
+.post(/product) Ruta para crear un producto - RUTA PRIVADA ADMIN<br>
+.put(/product/:id) Ruta para modificar un producto - RUTA PRIVADA ADMIN<br>
+.delete(product/:id) Ruta para eliminar un producto - RUTA PRIVADA ADMIN<br>
+.get(/productspro) Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO<br>
+.post(/cart) Ruta para seleccionar y agregar uno o varios productos en mi carrito - RUTA PRIVADA
 </p>
-
 
 <h3>CATEGORY:</h3>
 <p>
-- Ruta para ver una categoria - RUTA ABIERTA<br>
-- Ruta para ver todas las categorías - RUTA ABIERTA<br>
-- Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO<br>
-- Ruta para crear categoria nueva - RUTA PRIVADA ADMIN<br>
-- Ruta para modificar una categoria - RUTA PRIVADA ADMIN<br>
-- Ruta para eliminar una categoria - RUTA PRIADA ADMIN
+.get(/category/:id) Ruta para ver una categoria - RUTA ABIERTA<br>
+.get(/categories) Ruta para ver todas las categorías - RUTA ABIERTA<br>
+.get(/categoriespro) Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO<br>
+.post(/category) Ruta para crear categoria nueva - RUTA PRIVADA ADMIN<br>
+.put(/category/:id) Ruta para modificar una categoria - RUTA PRIVADA ADMIN<br>
+.delete(/category/:id) Ruta para eliminar una categoria - RUTA PRIADA ADMIN
+</p>
+
+<h3>SUBCATEGORY:</h3>
+<p>
+.get(/subcategory/:id) Ruta para ver una subcategoria asociada a una categoria- RUTA ABIERTA<br>
+.get(/subcategories) Ruta para ver todas las subcategorías de una categoria - RUTA ABIERTA<br>
+.post(/subcategory/:id) Ruta para crear una subcategoria asociada al id de una categoria - RUTA PRIVADA ADMIN<br>
+.put(/subcategory/:id) Ruta para modificar una subcategoria - RUTA PRIVADA ADMIN<br>
+.delete(/subcategory/:id) Ruta para eliminar una subcategoria - RUTA PRIVADA ADMIN
+</p>
+
+<h3>IMAGE:</h3>
+<p>
+.post(/upload) Ruta para subir una imágen - RUTA PRIVADA ADMIN<br>
+.post(/destroy) Ruta para eliminar una imágen - RUTA PRIVADA ADMIN
+</p>
+
+<h3>PAYMENT:</h3>
+<p>
+.post(/payment) Ruta para crear un pago - RUTA PRIVADA USER<br>
+.get(/payments) Ruta para ver todos los pagos realizados - RUTA PRIVADA USER
 </p>
 </div>

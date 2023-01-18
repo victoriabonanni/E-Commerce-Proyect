@@ -12,8 +12,8 @@
   
 .navdesplegada{
    background-color: rgb(232, 232, 226);
-   width: 30% !important;
-   height: 50vh !important;
+   /* width: 30% !important;
+   height: 50vh !important; */
    text-transform: none;
    padding-left: 40px;
   
