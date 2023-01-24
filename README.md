@@ -6,57 +6,59 @@
 <p>Fusca House is an e-commerce project, created from scratch, of home decoration and furniture products.  I performed the Development and construction of the Back and Frontend of my application (e-commerce).
 </p>
 
-<h2>Tecnologías principales empleadas</h2>
+<h2>Main Technologies used:</h2>
 <ul>
- <li><img src="./imagenes/mern-stack-01.png"  style="width:100px; height:50px; text-align:center"></img></li>
- <li><img src="./imagenes/logos.png"  style="width:100px; height:50px; text-align:center"></img></li>
+ <li><img src="./imagenes/mern-stack-01.png"  style="width:200px; height:150px; text-align:center"></img></li>
+ <li><img src="./imagenes/logos.png"  style="width:150px; height:80px; text-align:center"></img></li>
  <!-- <li><img src="./imagenes/MongoLogo.jpeg"  style="width:80px; height:60px; text-align:center"></img></li>
  <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li>
  <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li> -->
 </ul>
 
-<h3>Otras</h3>
+<h3>Others:</h3>
 <ul>
-<li><img src="./imagenes/GitHub-logo.png"  style="width:50px; height:50px; text-align:center"></img></li>
+<li><img src="./imagenes/GitHub-logo.png"  style="width:80px; height:60px; text-align:center"></img></li>
 <li><img src="./imagenes/Bootstrap_logo.png"  style="width:50px; height:50px; text-align:center"></img></li>
 <li><img src="./imagenes/cloudinary.png"  style="width:50px; height:50px; text-align:center"></img></li>
 <li><img src="./imagenes/postman.png"  style="width:50px; height:50px; text-align:center"></img></li>
-<li><img src="./imagenes/figma.png"  style="width:50px; height:50px; text-align:center"></img></li>
+<li><img src="./imagenes/figma.png"  style="width:70px; height:50px; text-align:center"></img></li>
 </ul>
 
 
-<h2>Application functionalities</h2>
-<h3>It is not necessary to be registered as a user to view all categories and products, but it is necessary to add products to your cart, make a payment and check all orders.</h3>
+<h2>Application functionalities:</h2>
+<h4>It is not necessary to be registered as a user to view all categories and products, but it is necessary if you want to add products to your cart, make a payment and check all orders.</h4>
 <div>
 <h3>Registration and Login System</h3>
 <h4>To be able to register:</h4>
-<p>.post(/register) = Open route for user registration </p>
+<p>.post(/register) = Public route for user registration </p>
 <p>Process:</p>
 <ol>
- <li>The user must enter first name, last name, e-mail and password.</li>
- <li>Verification of mail that is not registered and that complies with the format</li>
+ <li>The user must enter first name, a valid email and create a password.</li>
+ <li>Email verification to check that is not already registered in the Database and that complies with the format</li>
  <li>Password verification (must meet requirements, e.g. minimum 6 characters)</li>
  <li>Password encryption</li>
  <li>Token Key Creation</li>
 </ol>
 <h4>To be able to log in:</h4>
-<p>.post(/login) = Open route for the user to login</p>
+<p>.post(/login) = Public route for the user to login</p>
+<p>Process:</p>
 <ol>
  <li>The user must enter the email and password used to register.</li>
- <li>Authentication of his credentials with the database.</li>
+ <li>Authentication of his credentials with the Database.</li>
  <li>Generation of a new token key that gives access to the different functionalities.</li>
 </ol>
 
 <h3>User Login Panel</h3>
-<p>Hay 2 tipos de usuarios, Rutas, accesos y funcionalidades dentro de la aplicación:</p>
+<p>Routes, accesses and functionalities within the application:</p>
 <ul>
- <li>Access to all categories and products - PUBLIC ROUTE</li>
+ <li>Access to all categories - PUBLIC ROUTE</li>
+ <li>Access to all products - PUBLIC ROUTE</li>
  <li>You can add products to your cart - PRIVATE ROUTE</li>
  <li>You can make payments and view all payments made - PRIVATE ROUTE</li>
  <li>Access to all orders - PRIVATE ROUTE</li>
  <li>You can access, modify and delete your profile at any time - PRIVATE ROUTE</li>
 </ul>
-<h3>Administrator Panel - role assigned in the database</h3>
+<h3>Administrator Panel - role assigned in the Database</h3>
 <p>Routes (all private), accesses and functionalities within the application:</p>
 <ul>
  <li>You will be able to create, access, modify and delete all categories, subcategories and products.</li>
@@ -67,9 +69,9 @@
  <li>You can assign roles in the database</li>
 </ul>
 </div>
-
+<br>
 <h2>BACK-END ARQUITECTURE</h2>
-<p>Set up a server developed in NODE JS and connect to the database hosted in MONGODB.</p>
+<p>Start and set up a server developed in NODE JS and connect to the database hosted in MONGODB.</p>
 <h3>Main dependencies used</h3>
 <ul>
  <li>EXPRESS - necessary to create and run the server</li>
@@ -93,9 +95,11 @@
 
 <img src="./imagenes/modelos.png"  style="width:570px; height:500px; text-align:center"></img>
 
-
 <div>
 <h2>ROUTES:</h2>
+<p>Server is running con port 5001. Starting end-point: http://localhost:5001/api/"end-point"
+All routes testing were done on Postman.</p>
+
 <h3>USER:</h3>
 <p>
 .post(/register) Route to create an user - PUBLIC ROUTE <br>
@@ -152,4 +156,46 @@
 .post(/payment) Route to make a payment - PRIVATE USER ROUTE<br>
 .get(/payments) Route to view all payments made - PRIVATE USER ROUTE
 </p>
+</div>
+
+<h2>FRONT-END APPLICATION</h2>
+<p>Design and Development of the Frontend using REACTjs, hosted on port 3000 and interacting with the database hosted in MONGODB. </p>
+<h3>Main dependencies/libraries used</h3>
+<ul>
+ <li>AXIOS - allows to make requests or calls to the content of an HTTP link.</li>
+ <li>REACT-ROUTER-DOM - facilitates the process of defining navigation routes within our application.</li>
+ <li>REACT-DOM - in charge of rendering React components for the browser.</li>
+ <li>WEB-VITALS - quality indicators that are essential to provide an excellent user experience on the web.</li>
+ <li>REACT-HOOKS - useState & useEffect</li>
+ <li>REACT-BOOTSTRAP - CSS framework for proper styles of React</li>
+</ul>
+
+ Commands to run local server on front side => npm start
+
+ <h2>ROUTES & COMPONENTS:</h2>
+<p>Local Server is hosted con port 3000. Starting end-point: http://localhost:3000/"end-point"</p>
+<div>
+<p>Navbar and Footer components are rendered in all routes</p>
+<p>
+- Route path="/" render {Home.jsx} Component 
+- Route path="/login" render {Login.jsx} Component
+- Route path="/logout" render {Logout.jsx} Component
+- Route path="/new_user" render {Register.jsx} Component:
+- Route path="/my_profile" render {User.jsx} Component
+- Route path="/edit_myprofile" render {EditProfile.jsx} Component
+- Route path="/edit_user/:userId" render {EditUser.jsx} Component
+- Route path="/all_users" render {Users.jsx} Component
+- Route path="/new_in" render {NewIn.jsx} Component
+- Route path="/new_product" render {NewProduct.jsx} Component
+- Route path="/edit_product/:productId" render {EditProduct.jsx} Component
+- Route path="/product/:productId" render {Product.jsx} Component
+- Route path="/all_products" render {Products.jsx} Component
+- Route path="/new_category" render {NewCategory.jsx} Component
+- Route path="/all_categories" render {Categories.jsx} Component
+- Route path="/category/:categoryId" render {Category.jsx} Component
+- Route path="/edit_category/:categoryId" render {EditCategory.jsx} Component
+- Route path="/subcategory/:subcategoryId" render {Subcategory.jsx} Component
+- Route path="/new_subcategory/:categoryId" render {NewSubcategory.jsx} Component
+- Route path="/edit_subcategory/:subcategoryId" render {EditSubcategory.jsx} Component
+</p>  
 </div>
