@@ -8,11 +8,10 @@
 
 <h2>Main Technologies used:</h2>
 <ul>
- <li><img src="./imagenes/mern-stack-01.png"  style="width:200px; height:150px; text-align:center"></img></li>
- <li><img src="./imagenes/logos.png"  style="width:150px; height:80px; text-align:center"></img></li>
- <!-- <li><img src="./imagenes/MongoLogo.jpeg"  style="width:80px; height:60px; text-align:center"></img></li>
- <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li>
- <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li> -->
+ <li><img src="./imagenes/mern-stack-01.png"  style="width:180px; height:130px; text-align:center"></img></li>
+ <p>MONGODB, EXPRESS, REACTjs, NODEjs</p>
+ <li><img src="./imagenes/logos.png"  style="width:170px; height:80px; text-align:center"></img></li>
+ <p>HTML, CSS, JAVASCRIPT</p>
 </ul>
 
 <h3>Others:</h3>
@@ -157,10 +156,11 @@ All routes testing were done on Postman.</p>
 .get(/payments) Route to view all payments made - PRIVATE USER ROUTE
 </p>
 </div>
+<br>
 
 <h2>FRONT-END APPLICATION</h2>
 <p>Design and Development of the Frontend using REACTjs, hosted on port 3000 and interacting with the database hosted in MONGODB. </p>
-<h3>Main dependencies/libraries used</h3>
+<h3>Main dependencies/libraries used:</h3>
 <ul>
  <li>AXIOS - allows to make requests or calls to the content of an HTTP link.</li>
  <li>REACT-ROUTER-DOM - facilitates the process of defining navigation routes within our application.</li>
@@ -177,25 +177,25 @@ All routes testing were done on Postman.</p>
 <div>
 <p>Navbar and Footer components are rendered in all routes</p>
 <p>
-- Route path="/" render {Home.jsx} Component 
-- Route path="/login" render {Login.jsx} Component
-- Route path="/logout" render {Logout.jsx} Component
-- Route path="/new_user" render {Register.jsx} Component:
-- Route path="/my_profile" render {User.jsx} Component
-- Route path="/edit_myprofile" render {EditProfile.jsx} Component
-- Route path="/edit_user/:userId" render {EditUser.jsx} Component
-- Route path="/all_users" render {Users.jsx} Component
-- Route path="/new_in" render {NewIn.jsx} Component
-- Route path="/new_product" render {NewProduct.jsx} Component
-- Route path="/edit_product/:productId" render {EditProduct.jsx} Component
-- Route path="/product/:productId" render {Product.jsx} Component
-- Route path="/all_products" render {Products.jsx} Component
-- Route path="/new_category" render {NewCategory.jsx} Component
-- Route path="/all_categories" render {Categories.jsx} Component
-- Route path="/category/:categoryId" render {Category.jsx} Component
-- Route path="/edit_category/:categoryId" render {EditCategory.jsx} Component
-- Route path="/subcategory/:subcategoryId" render {Subcategory.jsx} Component
-- Route path="/new_subcategory/:categoryId" render {NewSubcategory.jsx} Component
-- Route path="/edit_subcategory/:subcategoryId" render {EditSubcategory.jsx} Component
+- Route path="/" render {Home.jsx} Component<br>
+- Route path="/login" render {Login.jsx} Component<br>
+- Route path="/logout" render {Logout.jsx} Component<br>
+- Route path="/new_user" render {Register.jsx} Component<br>
+- Route path="/my_profile" render {User.jsx} Component<br>
+- Route path="/edit_myprofile" render {EditProfile.jsx} Component<br>
+- Route path="/edit_user/:userId" render {EditUser.jsx} Component<br>
+- Route path="/all_users" render {Users.jsx} Component<br>
+- Route path="/new_in" render {NewIn.jsx} Component<br>
+- Route path="/new_product" render {NewProduct.jsx} Component<br>
+- Route path="/edit_product/:productId" render {EditProduct.jsx} Component<br>
+- Route path="/product/:productId" render {Product.jsx} Component<br>
+- Route path="/all_products" render {Products.jsx} Component<br>
+- Route path="/new_category" render {NewCategory.jsx} Component<br>
+- Route path="/all_categories" render {Categories.jsx} Component<br>
+- Route path="/category/:categoryId" render {Category.jsx} Component<br>
+- Route path="/edit_category/:categoryId" render {EditCategory.jsx} Component<br>
+- Route path="/subcategory/:subcategoryId" render {Subcategory.jsx} Component<br>
+- Route path="/new_subcategory/:categoryId" render {NewSubcategory.jsx} Component<br>
+- Route path="/edit_subcategory/:subcategoryId" render {EditSubcategory.jsx} Component<br>
 </p>  
 </div>
