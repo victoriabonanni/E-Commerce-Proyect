@@ -2,72 +2,85 @@
 
 <body>
 <h1>E-COMMERCE _FUSCA HOUSE</h1>
-<h2>Descripción del proyecto</h2>
-<p>Fusca House consiste en un proyecto de tienda on-line de productos de decoración y muebles para el hogar.
-No es necesario registrarse para ver todas las categorias y productos, pero sí para añadir los productos a su carrito, realizar compras y verificar todos los pedidos realizados</p>
+<h2>Proyect Description:</h2>
+<p>Fusca House is an e-commerce project, created from scratch, of home decoration and furniture products.  I performed the Development and construction of the Back and Frontend of my application (e-commerce).
+</p>
 
-<h2>Tecnologías empleadas</h2>
+<h2>Tecnologías principales empleadas</h2>
 <ul>
- <li><img src="./imagenes/jslogo.png"  style="width:50px; height:50px; text-align:center"></img></li>
- <li><img src="./imagenes/MongoLogo.jpeg"  style="width:80px; height:60px; text-align:center"></img></li>
+ <li><img src="./imagenes/mern-stack-01.png"  style="width:100px; height:50px; text-align:center"></img></li>
+ <li><img src="./imagenes/logos.png"  style="width:100px; height:50px; text-align:center"></img></li>
+ <!-- <li><img src="./imagenes/MongoLogo.jpeg"  style="width:80px; height:60px; text-align:center"></img></li>
  <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li>
- <li><img src="./imagenes/cloudinary.png"  style="width:50px; height:50px; text-align:center"></img></li>
+ <li><img src="./imagenes/nodejslogo.png"  style="width:80px; height:50px; text-align:center"></img></li> -->
 </ul>
 
-<h2>Funcionalidades de la aplicación</h2>
+<h3>Otras</h3>
+<ul>
+<li><img src="./imagenes/GitHub-logo.png"  style="width:50px; height:50px; text-align:center"></img></li>
+<li><img src="./imagenes/Bootstrap_logo.png"  style="width:50px; height:50px; text-align:center"></img></li>
+<li><img src="./imagenes/cloudinary.png"  style="width:50px; height:50px; text-align:center"></img></li>
+<li><img src="./imagenes/postman.png"  style="width:50px; height:50px; text-align:center"></img></li>
+<li><img src="./imagenes/figma.png"  style="width:50px; height:50px; text-align:center"></img></li>
+</ul>
+
+
+<h2>Application functionalities</h2>
+<h3>It is not necessary to be registered as a user to view all categories and products, but it is necessary to add products to your cart, make a payment and check all orders.</h3>
 <div>
-<h3>Sistema de Registro y Login</h3>
-<h4>Para poder registrarse:</h4>
-<p>.post(/register) = Ruta abierta para que el usuario se registre</p>
-<p>Proceso:</p>
+<h3>Registration and Login System</h3>
+<h4>To be able to register:</h4>
+<p>.post(/register) = Open route for user registration </p>
+<p>Process:</p>
 <ol>
- <li>El usuario debe introducir nombre, apellido, mail y contraseña</li>
- <li>Verificación de mail (que no este registrado y que cumpla el formato)</li>
- <li>Verificación de contraseña (que cumpla requisitos, por ej: mínimo 6 caracteres)</li>
- <li>Encriptación de contraseña</li>
- <li>Creación de Clave Token</li>
+ <li>The user must enter first name, last name, e-mail and password.</li>
+ <li>Verification of mail that is not registered and that complies with the format</li>
+ <li>Password verification (must meet requirements, e.g. minimum 6 characters)</li>
+ <li>Password encryption</li>
+ <li>Token Key Creation</li>
 </ol>
-<h4>Para poder logearse:</h4>
-<p>.post(/login) = Ruta abierta para que el usuario haga el login</p>
+<h4>To be able to log in:</h4>
+<p>.post(/login) = Open route for the user to login</p>
 <ol>
- <li>El usuario debe introducir el mail y la contraseña que utilizó para registrarse</li>
- <li>Autenticación de sus credenciales con la base de datos</li>
- <li>Generación de nueva clave Token que da acceso a las diferentes funcionalidades</li>
+ <li>The user must enter the email and password used to register.</li>
+ <li>Authentication of his credentials with the database.</li>
+ <li>Generation of a new token key that gives access to the different functionalities.</li>
 </ol>
 
-<h3>Panel de Usuario logeado</h3>
+<h3>User Login Panel</h3>
 <p>Hay 2 tipos de usuarios, Rutas, accesos y funcionalidades dentro de la aplicación:</p>
 <ul>
- <li>Acceso a todas las categorias y productos - RUTA ABIERTA</li>
- <li>Puede agregar productos a su carrito - RUTA PRIVADA</li>
- <li>Puede efectuar compras y ver todos los pagos realizadas - RUTA PRIVADA</li>
- <li>Acceso a todos los pedidos anteriores - RUTA PRIVADA</li>
- <li>Puede acceder, modificar y eliminar su perfil cuando lo desee - RUTA PRIVADA</li>
+ <li>Access to all categories and products - PUBLIC ROUTE</li>
+ <li>You can add products to your cart - PRIVATE ROUTE</li>
+ <li>You can make payments and view all payments made - PRIVATE ROUTE</li>
+ <li>Access to all orders - PRIVATE ROUTE</li>
+ <li>You can access, modify and delete your profile at any time - PRIVATE ROUTE</li>
 </ul>
-<h3>Panel de Administrador - rol asignado en la base de datos</h3>
-<p>Rutas(todas privadas), accesos y funcionalidades dentro de la aplicación:</p>
+<h3>Administrator Panel - role assigned in the database</h3>
+<p>Routes (all private), accesses and functionalities within the application:</p>
 <ul>
- <li>Podrá crear, acceder, modificar y eliminar todas las categorias, subcategorias y productos</li>
- <li>Podrá subir y eliminar imágenes</li>
- <li>Acceso a todos los pedidos y pagos realizados de la tienda o de un usuario en concreto</li>
- <li>Puede acceder, modificar o eliminar la información o perfil de un usuario</li>
- <li>Puede acceder a todos los usuarios registrados en la tienda</li>
+ <li>You will be able to create, access, modify and delete all categories, subcategories and products.</li>
+ <li>You can upload and delete images</li>
+ <li>Access to all orders and payments made for the store or for a specific user.</li>
+ <li>You can access, modify or delete a user's information or profile.</li>
+ <li>You can access to all registered users in the store.</li>
+ <li>You can assign roles in the database</li>
 </ul>
 </div>
 
-<h2>BACK-END</h2>
-<p>Levantar un servidor desarrollado en NODE JS y conectar con la Base de Datos alojada en MONGODB</p>
-<h3>Dependencias principales utilizadas</h3>
+<h2>BACK-END ARQUITECTURE</h2>
+<p>Set up a server developed in NODE JS and connect to the database hosted in MONGODB.</p>
+<h3>Main dependencies used</h3>
 <ul>
- <li>EXPRESS - necesaria para crear el servidor</li>
- <li>NODEMON - actualiza los cambios en tiempo real visibles en la terminal</li>
- <li>MONGOOSE - me conecta y permite manejar una base de datos en la nube</li>
- <li>DOTENV - me guarda esa base de datos en un archivo escondido (.env)</li>
+ <li>EXPRESS - necessary to create and run the server</li>
+ <li>NODEMON - updates the changes in real time visible in the terminal</li>
+ <li>MONGOOSE - connects me to and allows me to manage a database in the cloud.</li>
+ <li>DOTENV - saves that database to a hidden file (.env)</li>
 </ul>
 
-Comandos para arrancar el servidor => npm run dev
+ Commands to start the server => npm run dev
 
-<h3>Dependencias secundarias utilizadas</h3>
+<h3>Secondary dependencies used</h3>
 <ul>
  <li>Bcrypt</li>
  <li>JsonWebToken</li>
@@ -76,67 +89,67 @@ Comandos para arrancar el servidor => npm run dev
  <li>Express-fileupload</li>
 </ul>
 
-<h2>MODELOS DE DATOS DE MI APLICACIÓN</h2>
+<h2>DATA MODELS OF MY APPLICATION</h2>
 
 <img src="./imagenes/modelos.png"  style="width:570px; height:500px; text-align:center"></img>
 
 
 <div>
-<h2>RUTAS:</h2>
+<h2>ROUTES:</h2>
 <h3>USER:</h3>
 <p>
-.post(/register) Ruta para crear un user - RUTA ABIERTA <br>
-.post(/login) Ruta para log in - RUTA ABIERTA<br>
-.get(/users) Ruta para ver todos los usuarios - RUTA ADMIN<br>
-.get(/user) Ruta para que el usuario vea su perfil - RUTA PRIVADA USER<br>
-.put(/user) Ruta para que el user modifique su perfil - RUTA PRIVADA USER<br>
-.delete(/user) Ruta para que el user elimine su cuenta - RUTA PRIVADA USER<br>
-.put(/user/:id) Ruta para que el admin modifique un user - RUTA ADMIN<br>
-.delete(/user/:id) Ruta para que el admin elimine un user - RUTA ADMIN<br>
-.post(/cart) Ruta para agregar productos al carrito - RUTA PRIVADA USER<br>
-.get(/orders) Ruta para acceder a todas las ventas - RUTA ADMIN<br>
-.get(/cart) Ruta para acceder al carrito - RUTA PRIVADA USER<br>
+.post(/register) Route to create an user - PUBLIC ROUTE <br>
+.post(/login) Route to log in - PUBLIC ROUTE<br>
+.get(/users) Route to access to all registered users - PRIVATE ADMIN ROUTE<br>
+.get(/user) Route for the loged in user`s profile - PRIVATE USER ROUTE<br>
+.put(/user) Route for the user to modify his profile - PRIVATE USER ROUTE<br>
+.delete(/user) Route for the user to delete his account - PRIVATE USER ROUTE<br>
+.put(/user/:id) Route for the admin to modify a user - PRIVATE ADMIN ROUTE<br>
+.delete(/user/:id) Route for the admin to delete a user - PRIVATE ADMIN ROUTE<br>
+.post(/cart) Route to add products to cart - PRIVATE USER ROUTE<br>
+.get(/orders) Route to all sales - PRIVATE ADMIN ROUTE<br>
+.get(/cart) Route to access the shopping cart - PRIVATE USER ROUTE<br>
 </p>
 
 <h3>PRODUCT:</h3>
 <p>
-.get(/product/:id) Ruta para ver un producto en concreto - RUTA ABIERTA<br>
-.get(/products) Ruta para ver todos los productos - RUTA ABIERTA<br>
-.post(/product) Ruta para crear un producto - RUTA PRIVADA ADMIN<br>
-.put(/product/:id) Ruta para modificar un producto - RUTA PRIVADA ADMIN<br>
-.delete(product/:id) Ruta para eliminar un producto - RUTA PRIVADA ADMIN<br>
-.get(/productspro) Ruta para ver todos los productos pro - RUTA PRIVADA USER PRO<br>
-.post(/cart) Ruta para seleccionar y agregar uno o varios productos en mi carrito - RUTA PRIVADA
+.get(/product/:id) Route to view a specific product - PUBLIC ROUTE<br>
+.get(/products) Route to view all products - PUBLIC ROUTE<br>
+.post(/product) Route to create a product - PRIVATE ADMIN ROUTE<br>
+.put(/product/:id) Route to modify a product - PRIVATE ADMIN ROUTE<br>
+.delete(product/:id) Route to delete a product - PRIVATE ADMIN ROUTE<br>
+.get(/productspro) Route to view all pro products - PRIVATE USER PRO ROUTE<br>
+.post(/cart) Route to select and add products to my cart - PRIVATE USER ROUTE
 </p>
 
 <h3>CATEGORY:</h3>
 <p>
-.get(/category/:id) Ruta para ver una categoria - RUTA ABIERTA<br>
-.get(/categories) Ruta para ver todas las categorías - RUTA ABIERTA<br>
-.get(/categoriespro) Ruta para ver todas las categorias pro - RUTA PRIVADA USER PRO<br>
-.post(/category) Ruta para crear categoria nueva - RUTA PRIVADA ADMIN<br>
-.put(/category/:id) Ruta para modificar una categoria - RUTA PRIVADA ADMIN<br>
-.delete(/category/:id) Ruta para eliminar una categoria - RUTA PRIADA ADMIN
+.get(/category/:id) Route to view a specific category - PUBLIC ROUTE<br>
+.get(/categories) Route to view all categories - PUBLIC ROUTE<br>
+.get(/categoriespro) Route to view all pro categories - PRIVATE USER PRO ROUTE<br>
+.post(/category) Route to create a new category - PRIVATE ADMIN ROUTE<br>
+.put(/category/:id) Route to modify category - PRIVATE ADMIN ROUTE<br>
+.delete(/category/:id) Route to delete category - PRIVATE ADMIN ROUTE
 </p>
 
 <h3>SUBCATEGORY:</h3>
 <p>
-.get(/subcategory/:id) Ruta para ver una subcategoria asociada a una categoria- RUTA ABIERTA<br>
-.get(/subcategories) Ruta para ver todas las subcategorías de una categoria - RUTA ABIERTA<br>
-.post(/subcategory/:id) Ruta para crear una subcategoria asociada al id de una categoria - RUTA PRIVADA ADMIN<br>
-.put(/subcategory/:id) Ruta para modificar una subcategoria - RUTA PRIVADA ADMIN<br>
-.delete(/subcategory/:id) Ruta para eliminar una subcategoria - RUTA PRIVADA ADMIN
+.get(/subcategory/:id) Route to view a subcategory associated to a category - PUBLIC ROUTE<br>
+.get(/subcategories) Route to view all subcategories of a specific category - PUBLIC ROUTE<br>
+.post(/subcategory/:id) Route to create a subcategory associated to the id of a category - PRIVATE ADMIN ROUTE<br>
+.put(/subcategory/:id) Route to modify a subcategory - PRIVATE ADMIN ROUTE<br>
+.delete(/subcategory/:id) Route to delete a subcategory - PRIVATE ADMIN ROUTE
 </p>
 
 <h3>IMAGE:</h3>
 <p>
-.post(/upload) Ruta para subir una imágen - RUTA PRIVADA ADMIN<br>
-.post(/destroy) Ruta para eliminar una imágen - RUTA PRIVADA ADMIN
+.post(/upload) Route to upload an image - PRIVATE ADMIN ROUTE<br>
+.post(/destroy) Route to delete an image - PRIVATE ADMIN ROUTE
 </p>
 
 <h3>PAYMENT:</h3>
 <p>
-.post(/payment) Ruta para crear un pago - RUTA PRIVADA USER<br>
-.get(/payments) Ruta para ver todos los pagos realizados - RUTA PRIVADA USER
+.post(/payment) Route to make a payment - PRIVATE USER ROUTE<br>
+.get(/payments) Route to view all payments made - PRIVATE USER ROUTE
 </p>
 </div>
